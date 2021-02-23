@@ -67,10 +67,6 @@ const progressFfmpeg = new cliProgress.SingleBar(
 
     if (!msEnd) {
       const mcLoaded = await page.evaluate(`window.mc`);
-      if (!mcLoaded) {
-        handleError(Error(" The Id you have provided is not valid!"));
-        process.exit();
-      }
       msEnd = await page.evaluate(`window.mc.Player.clip.duration`);
     }
 
