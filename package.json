@@ -1,0 +1,34 @@
+{
+  "name": "dclip-video-renderer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "render": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kissmybutton/dclip-video-renderer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kissmybutton/dclip-video-renderer/issues"
+  },
+  "homepage": "https://github.com/kissmybutton/dclip-video-renderer#readme",
+  "dependencies": {
+    "cli-progress": "^3.9.0",
+    "ffmpeg-stream": "^0.7.0",
+    "puppeteer": "^7.1.0",
+    "streamifier": "^0.1.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1"
+  }
+}

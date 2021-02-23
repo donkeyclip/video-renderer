@@ -1,0 +1,35 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["eslint:recommended", "prettier"],
+  "plugins": ["babel", "prettier"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "knex": false
+  },
+  "rules": {
+    "max-len": ["error", { "code": 80 }],
+    "prettier/prettier": ["error"],
+    "linebreak-style": ["error", "unix"],
+    "semi": ["error", "always"],
+    "no-console": [
+      "error",
+      {
+        "allow": ["warn", "error", "info"]
+      }
+    ],
+    "prefer-promise-reject-errors": "error",
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "any",
+        "ignoreReadBeforeAssign": false
+      }
+    ],
+    "no-var": "error",
+    "no-unused-vars": "error"
+  }
+}
