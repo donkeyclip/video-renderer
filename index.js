@@ -17,7 +17,7 @@ const gpa = (arg) =>
   process.argv.indexOf(arg) + 1 && process.argv[process.argv.indexOf(arg) + 1];
 const handleError = (e) => {
   progressFrames.stop();
-  console.error(e);
+  console.error(e.message + "\n");
   process.exit();
 };
 const progressFrames = new cliProgress.SingleBar(
@@ -46,7 +46,7 @@ const progressFfmpeg = new cliProgress.SingleBar(
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
       headless: true,
     });
-    const page = await browser.newPage();
+    const page = await browser.newPage({ waitUntil: "networkidle" });
 
     await page.setViewport({
       width,
@@ -63,9 +63,14 @@ const progressFfmpeg = new cliProgress.SingleBar(
           </div>
         </body>
      `;
-    await page.setContent(htmlContent);
+    const l = await page.setContent(htmlContent);
 
     if (!msEnd) {
+      const mcLoaded = await page.evaluate(`window.mc`);
+      if (!mcLoaded) {
+        handleError(Error(" The Id you have provided is not valid!"));
+        process.exit();
+      }
       msEnd = await page.evaluate(`window.mc.Player.clip.duration`);
     }
 

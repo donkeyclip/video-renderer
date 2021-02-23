@@ -1,10 +1,10 @@
 {
   "name": "dclip-video-renderer",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "render": "node index.js"
+      "render": "node index.js"
   },
   "repository": {
     "type": "git",
