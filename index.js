@@ -59,7 +59,7 @@ const progressFfmpeg = new cliProgress.SingleBar(
           #host{position: absolute;width:100%;height: 100%;top:0px;left: 0px}
         </style>
           <div id="host">
-            <script data-scale-to-fit src="http://localhost:3030/embed/${id}/"></script>
+            <script data-scale-to-fit src="https://staging-api.donkeyclip.com/embed/${id}/"></script>
           </div>
         </body>
      `;
