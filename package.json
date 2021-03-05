@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-      "render": "node index.js"
+    "render": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
   "homepage": "https://github.com/kissmybutton/dclip-video-renderer#readme",
   "dependencies": {
     "cli-progress": "^3.9.0",
+    "colors": "^1.4.0",
     "ffmpeg-stream": "^0.7.0",
     "puppeteer": "^7.1.0",
     "streamifier": "^0.1.1"
