@@ -1,0 +1,21 @@
+{
+  "extends": ["config:base"],
+  "separateMinorPatch": true,
+  "semanticCommits": "enabled",
+  "patch": {
+    "automerge": true
+  },
+  "pin": {
+    "automerge": true
+  },
+  "lockFileMaintenance": {
+    "automerge": true
+  },
+  "automergeType": "branch",
+  "packageRules": [
+    {
+      "matchDepTypes": ["peerDependencies"],
+      "enabled": false
+    }
+  ]
+}
