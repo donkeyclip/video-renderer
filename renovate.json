@@ -1,24 +1,10 @@
 {
-  "extends": ["config:base"],
-  "separateMajorReleases": true,
-  "semanticCommits": "enabled",
-  "minor": {
-    "automerge": true
-  },
-  "patch": {
-    "automerge": true
-  },
-  "pin": {
-    "automerge": true
-  },
-  "lockFileMaintenance": {
-    "automerge": true
-  },
-  "automergeType": "branch",
-  "packageRules": [
-    {
-      "matchDepTypes": ["peerDependencies"],
-      "enabled": false
-    }
+  "extends": [
+    "config:base",
+    ":separateMajorReleases",
+    ":automergeMinor",
+    ":disablePeerDependencies",
+    ":semanticCommits",
+    ":automergeBranch"
   ]
 }
