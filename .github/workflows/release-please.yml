@@ -13,24 +13,19 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-    # Extract package version from pacakge.json
     - name: Get package name
       id: name
       uses: notiz-dev/github-action-json-property@release
       with:
         path: "package.json"
         prop_path: "name"
-      # Prep release mr
       - uses: GoogleCloudPlatform/release-please-action@v1.3.0
         id: release
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
           package-name: ${{steps.name.outputs.prop}}
-      # The logic below handles the npm publication:
       - uses: actions/checkout@v2
-        # these if statements ensure that a publication only occurs when
-        # a new release is created:
         if: ${{ steps.release.outputs.release_created }}
       - uses: actions/setup-node@v2
         with:
