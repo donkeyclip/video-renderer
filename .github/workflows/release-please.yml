@@ -13,6 +13,7 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - name: Get package name
       id: name
       uses: notiz-dev/github-action-json-property@release
