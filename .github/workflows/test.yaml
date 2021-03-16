@@ -10,7 +10,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node: [10, 12, 14]
+        node: [12, 14]
         os: [ubuntu-latest, windows-latest, macos-latest]
     name: Building on ${{ matrix.os }} and node ${{ matrix.node }}
     steps:
