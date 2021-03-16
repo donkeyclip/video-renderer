@@ -20,7 +20,7 @@ jobs:
       with:
         path: "package.json"
         prop_path: "name"
-    # Prep release mr
+      # Prep release mr
       - uses: GoogleCloudPlatform/release-please-action@v1.3.0
         id: release
         with:
