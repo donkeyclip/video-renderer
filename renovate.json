@@ -1,7 +1,10 @@
 {
   "extends": ["config:base"],
-  "separateMinorPatch": true,
+  "separateMajorReleases": true,
   "semanticCommits": "enabled",
+  "minor": {
+    "automerge": true
+  },
   "patch": {
     "automerge": true
   },
