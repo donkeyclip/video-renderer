@@ -1,0 +1,24 @@
+##############################################
+# FILE GENERATED AUTOMATICALLY FROM TERRAFORM
+# THIS FILE SHOULD NOT BE EDITED BY HAND
+##############################################
+
+name: Build package
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node: [10, 12, 14]
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    name: Building on ${{ matrix.os }} and node ${{ matrix.node }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm ci
+      - run: npm run build
+      # - run: npm run test
