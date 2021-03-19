@@ -2,6 +2,7 @@ const puppeteer = require("puppeteer");
 const { parentPort } = require("worker_threads");
 
 module.exports = async ({
+  localhostUrl,
   url,
   id,
   millisecondsArray,
@@ -20,7 +21,14 @@ module.exports = async ({
     width,
     height,
   });
-  const htmlContent = `
+
+  if (!id) {
+    await page.goto(localhostUrl);
+    await page.evaluate(
+      `window.mc.Player.changeSettings({fullscreen:true,controls:false,scaleToFit:true})`
+    );
+  } else {
+    const htmlContent = `
         <body>
         <style>
           html,body{width:100%;height:100%;padding: 0;margin: 0;}
@@ -31,7 +39,8 @@ module.exports = async ({
           </div>
         </body>
      `;
-  const l = await page.setContent(htmlContent);
+    await page.setContent(htmlContent);
+  }
 
   for (const ms in millisecondsArray) {
     parentPort.postMessage({ increment: true });
