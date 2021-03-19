@@ -20,7 +20,8 @@ where in `<clip_uid>` add the dockey clip uid you want to convert.
 | -s | integer | 0|Start milisecond of the donkey clip |
 | -e | integer | <clip.duration>|End milisecond of the donkey clip |
 | -c | integer | total cpus / 2 |Number of cpus to use |
-| -env | integer ["local","staging","production"] | production | Number of cpus to use |
+| -env | integer ["local","staging","production"] | production | select the environmet from witch to check the id |
+| -l | string | http://localhost:8090 | Enter the localhost url of the clip to render |
 
 #### Full Example
-`node node_modules/dclip-video-renderer -- -i 7179a8c1-2DC3 -o ./dclip.mp4 -r 24 -q 80 -w 720 -h 640 -s 1000 -e 5000 -c 4;`
+`node node_modules/dclip-video-renderer -- -i 7179a8c1-2DC3 -o ./dclip.mp4 -r 24 -q 80 -w 720 -h 640 -s 1000 -e 5000 -c 4 -l http://locahost:8080;`
