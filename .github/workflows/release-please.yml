@@ -1,0 +1,43 @@
+##############################################
+# FILE GENERATED AUTOMATICALLY FROM TERRAFORM
+# THIS FILE SHOULD NOT BE EDITED BY HAND
+##############################################
+
+on:
+  push:
+    branches:
+      - main
+
+name: release-please
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Get package name
+      id: name
+      uses: notiz-dev/github-action-json-property@release
+      with:
+        path: 'package.json'
+        prop_path: 'name'
+    - uses: GoogleCloudPlatform/release-please-action@v2.22.0
+      id: release
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        release-type: node
+        package-name: ${{steps.name.outputs.prop}}
+    - uses: actions/checkout@v2
+      if: ${{ steps.release.outputs.release_created }}
+    - uses: actions/setup-node@v2
+      with:
+        node-version: 14
+        registry-url: 'https://registry.npmjs.org'
+      if: ${{ steps.release.outputs.release_created }}
+    - run: npm ci
+      if: ${{ steps.release.outputs.release_created }}
+    - run: npm i
+      if: ${{ steps.release.outputs.release_created }}
+    - run: npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      if: ${{ steps.release.outputs.release_created }}

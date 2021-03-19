@@ -1,0 +1,24 @@
+##############################################
+# FILE GENERATED AUTOMATICALLY FROM TERRAFORM
+# THIS FILE SHOULD NOT BE EDITED BY HAND
+##############################################
+
+name: misspell
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 12 * * 1-5"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: sobolevn/misspell-fixer-action@0.1.0
+      - uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "fix: Typo fixes by misspell-fixer"
+          title: "fix: Typos fix by misspell-fixer"
