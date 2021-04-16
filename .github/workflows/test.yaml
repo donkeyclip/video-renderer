@@ -4,7 +4,13 @@
 ##############################################
 
 name: Build package
-on: [push, pull_request]
+on:
+  pull_request:
+  push:
+    branches:
+      - `${branch}`
+      - 'renovate/**'
+
 jobs:
   build:
     runs-on: ${{ matrix.os }}
