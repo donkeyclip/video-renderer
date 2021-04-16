@@ -12,6 +12,9 @@ name: release-please
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    env:
+      HUSKY_SKIP_HOOKS: 1
+      HUSKY: 0
     steps:
     - uses: actions/checkout@v2
     - name: Get package name
