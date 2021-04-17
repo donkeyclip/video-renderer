@@ -10,10 +10,23 @@
     "type": "git",
     "url": "git+https://github.com/kissmybutton/dclip-video-renderer.git"
   },
-  "author": "",
+  "author": "Theofilos Papadopoulos, theofilos.p@kissmybutton.gr",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kissmybutton/dclip-video-renderer/issues"
+  },
+  "release": {
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      "@semantic-release/git"
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
   },
   "homepage": "https://github.com/kissmybutton/dclip-video-renderer#readme",
   "dependencies": {
@@ -24,11 +37,16 @@
     "streamifier": "^0.1.1"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "5.0.1",
+    "@semantic-release/git": "9.0.0",
+    "@semantic-release/github": "7.2.1",
+    "@semantic-release/npm": "7.1.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-prettier": "^3.3.1",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "semantic-release": "17.4.2"
   }
 }
