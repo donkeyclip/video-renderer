@@ -18,7 +18,8 @@ const { handleError } = require("./lib");
       // read process arguments
       const { inputArguments, outputArguments } = await getProcessArguments();
 
-      // prepare milliseconds for frames in particions based on number of threads
+      // prepare milliseconds for frames in
+      // particions based on number of threads
       const { framePartitions, totalFrames } = prepareFramePartitions(
         inputArguments
       );

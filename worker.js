@@ -1,15 +1,7 @@
 const puppeteer = require("puppeteer");
 const { parentPort } = require("worker_threads");
 
-module.exports = async ({
-  localhostUrl,
-  url,
-  id,
-  millisecondsArray,
-  width,
-  height,
-  quality,
-}) => {
+module.exports = async ({ url, millisecondsArray, width, height, quality }) => {
   const browser = await puppeteer.launch({
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
     headless: true,
@@ -22,31 +14,16 @@ module.exports = async ({
     height,
   });
 
-  if (!id) {
-    await page.goto(localhostUrl);
-    await page.evaluate(
-      `window.mc.Player.changeSettings({fullscreen:true,controls:false,scaleToFit:true})`
-    );
-  } else {
-    const htmlContent = `
-        <body>
-        <style>
-          html,body{width:100%;height:100%;padding: 0;margin: 0;}
-          #host{position: absolute;width:100%;height: 100%;top:0px;left: 0px}
-        </style>
-          <div id="host">
-            <script data-scale-to-fit src="${url}${id}/"></script>
-          </div>
-        </body>
-     `;
-    await page.setContent(htmlContent);
-  }
+  await page.goto(url, { waitUntil: "networkidle2" });
 
   for (const ms in millisecondsArray) {
     parentPort.postMessage({ increment: true });
 
     await page.evaluate(
-      `window.mc.Player.createJourney(${millisecondsArray[ms]})`
+      (millisecondsArray, ms) =>
+        window.DonkeyClip.Player.createJourney(millisecondsArray[ms]),
+      millisecondsArray,
+      ms
     );
     const buffer = await page.screenshot({
       type: "jpeg",
