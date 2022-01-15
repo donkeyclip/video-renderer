@@ -9,7 +9,7 @@ git clone git@github.com:donkeyclip/video-renderer.git
 npm i
 npm run render -- -u https://staging-api.donkeyclip.com/v1/embed/2QBwp2qrbRqdPfDDKYfXKa -e 4000
 ```
-You must provide a url or an id of a donclip. See the options bellow. Also the end millisecond is mandatory.
+You must provide a url or an id of a donkeyclip. See the options bellow. Also the end millisecond is mandatory.
 
 # Options
 
