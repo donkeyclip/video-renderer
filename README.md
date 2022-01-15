@@ -1,15 +1,15 @@
-# dclip-video-renderer
+# video-renderer
 
 This is the library that can convert your donkey clip into an mp4 clip. It's an ongoing opensource project, currently on alpha version. We are happy to have new developers to contribute. Feel free to open issues or create a new pull request. See [how to contribute](#contribute)
 
 To test just run your project
 
+```bash
+git clone git@github.com:donkeyclip/video-renderer.git
+npm i
+npm run render -- -u https://staging-api.donkeyclip.com/v1/embed/2QBwp2qrbRqdPfDDKYfXKa -e 4000
 ```
-npm i dclip-video-renderer;
-node node_modules/dclip-video-renderer -- -i <clip_uid>;
-```
-
-where in `<clip_uid>` add the dockey clip uid you want to convert.
+You must provide a url or an id of a donclip. See the options bellow. Also the end millisecond is mandatory.
 
 # Options
 
@@ -25,8 +25,6 @@ where in `<clip_uid>` add the dockey clip uid you want to convert.
 | -e       | integer                                  | -                                                                      | End milisecond of the donkey clip                |
 | -c       | integer                                  | 1                                                                      | Number of cpus to use                            |
 | -u       | string                                   | The url of a donkeyclip e.g. https://api.donkeyclip.com/embed/<clipid> |
-| -env     | integer ["local","staging","production"] | production                                                             | select the environmet from witch to check the id |
-| -l       | string                                   | http://localhost:8090                                                  | Enter the localhost url of the clip to render    |
 
 #### Full Example
 
