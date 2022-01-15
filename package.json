@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "render": "node index.js"
+    "render": "node index.js",
+    "build":""
   },
   "repository": {
     "type": "git",
