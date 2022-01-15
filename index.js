@@ -1,4 +1,3 @@
-"use strict";
 const { isMainThread, parentPort, workerData } = require("worker_threads");
 const captureframes = require("./worker");
 const { handleError } = require("./lib");

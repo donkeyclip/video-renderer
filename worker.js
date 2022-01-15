@@ -1,13 +1,21 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const puppeteer = require("puppeteer");
 const { parentPort } = require("worker_threads");
 
-module.exports = async ({ url, millisecondsArray, width, height, quality }) => {
+module.exports = async ({
+  url,
+  millisecondsArray,
+  width,
+  height,
+  quality,
+  headless,
+}) => {
   const browser = await puppeteer.launch({
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    headless: true,
+    headless,
   });
   const frames = [];
-  const page = await browser.newPage({ waitUntil: "networkidle" });
+  const page = await browser.newPage({ waitUntil: "networkidle2" });
 
   await page.setViewport({
     width,
