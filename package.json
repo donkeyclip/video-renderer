@@ -1,7 +1,7 @@
 {
-  "name": "dclip-video-renderer",
-  "version": "1.3.0",
-  "description": "",
+  "name": "@donkeyclip/video-renderer",
+  "version": "1.4.0",
+  "description": "A library that renderes donkey clips to mp4",
   "main": "index.js",
   "scripts": {
     "render": "node index.js",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kissmybutton/dclip-video-renderer.git"
+    "url": "https://github.com/donkeyclip/video-renderer"
   },
-  "author": "Theofilos Papadopoulos, theofilos.p@kissmybutton.gr",
+  "author": "donkeyclip, opensource@donkeyclip.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kissmybutton/dclip-video-renderer/issues"
+    "url": "https://github.com/donkeyclip/video-renderer/issues"
   },
   "release": {
     "verifyConditions": [
@@ -29,7 +29,7 @@
       "@semantic-release/git"
     ]
   },
-  "homepage": "https://github.com/kissmybutton/dclip-video-renderer#readme",
+  "homepage": "https://github.com/donkeyclip/video-renderer#readme",
   "dependencies": {
     "cli-progress": "^3.9.0",
     "colors": "^1.4.0",
