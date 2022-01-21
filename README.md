@@ -26,9 +26,6 @@ You must provide a url or an id of a donkeyclip. See the options bellow. Also th
 | -c       | integer                                  | 1                                                                      | Number of cpus to use                            |
 | -u       | string                                   | The url of a donkeyclip e.g. https://api.donkeyclip.com/embed/<clipid> |
 
-#### Full Example
-
-`node node_modules/dclip-video-renderer -- -i 7179a8c1-2DC3 -o ./dclip.mp4 -r 24 -q 80 -w 720 -h 640 -s 1000 -e 5000 -c 4 -l http://locahost:8080;`
 
 ### Contribute
 
