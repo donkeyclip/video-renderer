@@ -1,6 +1,6 @@
 {
   "name": "@donkeyclip/video-renderer",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "A library that renders donkey clips to mp4",
   "main": "index.js",
   "scripts": {
