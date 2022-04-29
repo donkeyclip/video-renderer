@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.4.2](https://www.github.com/donkeyclip/video-renderer/compare/v1.4.1...v1.4.2) (2022-04-29)
+
+
+### Bug Fixes
+
+* update deps to resolve security warnings ([d590dfa](https://www.github.com/donkeyclip/video-renderer/commit/d590dfa8d048038fabf9d0471533694a18c1689a))
+
 ### [1.4.1](https://www.github.com/donkeyclip/video-renderer/compare/v1.4.0...v1.4.1) (2022-04-29)
 
 
