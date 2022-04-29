@@ -16,7 +16,7 @@ jobs:
       HUSKY_SKIP_HOOKS: 1
       HUSKY: 0
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Get package name
       id: name
       uses: notiz-dev/github-action-json-property@release
@@ -29,7 +29,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         release-type: node
         package-name: ${{steps.name.outputs.prop}}
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       if: ${{ steps.release.outputs.release_created }}
     - uses: actions/setup-node@v2
       with:
