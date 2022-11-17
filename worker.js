@@ -29,7 +29,7 @@ module.exports = async ({
 
     await page.evaluate(
       (millisecondsArray, ms) =>
-        window.DonkeyClip.Player.createJourney(millisecondsArray[ms]),
+        window.DonkeyClip.Player.goToMillisecond(millisecondsArray[ms]),
       millisecondsArray,
       ms
     );
