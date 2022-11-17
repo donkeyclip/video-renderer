@@ -2,6 +2,8 @@
 
 This is the library that can convert your donkey clip into an mp4 clip. It's an ongoing opensource project, currently on alpha version. We are happy to have new developers to contribute. Feel free to open issues or create a new pull request. See [how to contribute](#contribute)
 
+** Note: ffmpeg is required to be installed in your system. **
+
 To test just run your project
 
 ```bash
@@ -9,23 +11,23 @@ git clone git@github.com:donkeyclip/video-renderer.git
 npm i
 npm run render -- -u https://staging-api.donkeyclip.com/v1/embed/2QBwp2qrbRqdPfDDKYfXKa -e 4000
 ```
+
 You must provide a url or an id of a donkeyclip. See the options bellow. Also the end millisecond is mandatory.
 
 # Options
 
-| argument | type                                     | default                                                                | description                                      |
-| -------- | ---------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------ |
-| -i       | string                                   | null                                                                   | The unique donkey clip id as an Input            |
-| -o       | string [*.mp4]                           | ./out.mp4                                                              | The Output file path                             |
-| -r       | integer                                  | 24                                                                     | FrameRate of the output video                    |
-| -q       | integer [0-100]                          | 80                                                                     | Quality of the video                             |
-| -w       | integer                                  | 720                                                                    | Width of the video                               |
-| -h       | integer                                  | 640                                                                    | Height of the video                              |
-| -s       | integer                                  | 0                                                                      | Start milisecond of the donkey clip              |
-| -e       | integer                                  | -                                                                      | End milisecond of the donkey clip                |
-| -c       | integer                                  | 1                                                                      | Number of cpus to use                            |
-| -u       | string                                   | The url of a donkeyclip e.g. https://api.donkeyclip.com/embed/<clipid> |
-
+| argument | type            | default                                                                | description                           |
+| -------- | --------------- | ---------------------------------------------------------------------- | ------------------------------------- |
+| -i       | string          | null                                                                   | The unique donkey clip id as an Input |
+| -o       | string [*.mp4]  | ./out.mp4                                                              | The Output file path                  |
+| -r       | integer         | 24                                                                     | FrameRate of the output video         |
+| -q       | integer [0-100] | 80                                                                     | Quality of the video                  |
+| -w       | integer         | 720                                                                    | Width of the video                    |
+| -h       | integer         | 640                                                                    | Height of the video                   |
+| -s       | integer         | 0                                                                      | Start milisecond of the donkey clip   |
+| -e       | integer         | -                                                                      | End milisecond of the donkey clip     |
+| -c       | integer         | 1                                                                      | Number of cpus to use                 |
+| -u       | string          | The url of a donkeyclip e.g. https://api.donkeyclip.com/embed/<clipid> |
 
 ### Contribute
 
