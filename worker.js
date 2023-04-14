@@ -12,7 +12,7 @@ module.exports = async ({
 }) => {
   const browser = await puppeteer.launch({
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    headless,
+    headless: true,
   });
   const frames = [];
   const page = await browser.newPage({ waitUntil: "networkidle2" });
@@ -29,7 +29,9 @@ module.exports = async ({
 
     await page.evaluate(
       (millisecondsArray, ms) =>
-        window.DonkeyClip.Player.goToMillisecond(millisecondsArray[ms]),
+        window.document
+          .getElementsByTagName("donkey-clip")[0]
+          .setAttribute("ms", millisecondsArray[ms]),
       millisecondsArray,
       ms
     );
