@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.4.3](https://github.com/donkeyclip/video-renderer/compare/v1.4.2...v1.4.3) (2024-02-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency cli-progress to v3.12.0 ([dd7283f](https://github.com/donkeyclip/video-renderer/commit/dd7283f539023e1c7e9c1809b5c88488fc9cc956))
+* new version renderer ([405ff9a](https://github.com/donkeyclip/video-renderer/commit/405ff9ab43d4fb98343394f42b3f2c189d50e39b))
+* update player function ([62a7550](https://github.com/donkeyclip/video-renderer/commit/62a75504a1c567dd26d43f836e829c50bef9c2be))
+
 ### [1.4.2](https://www.github.com/donkeyclip/video-renderer/compare/v1.4.1...v1.4.2) (2022-04-29)
 
 
