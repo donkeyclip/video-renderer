@@ -21,7 +21,7 @@
     "cli-progress": "^3.10.0",
     "colors": "^1.4.0",
     "ffmpeg-stream": "^0.7.0",
-    "puppeteer": "^13.7.0",
+    "puppeteer": "^22.0.0",
     "streamifier": "^0.1.1"
   },
   "devDependencies": {
